@@ -15,7 +15,7 @@ $pdo = db_conn();
 //* PasswordがHash化→条件はlidのみ！！
 //2. データ登録SQL作成
 //* PasswordがHash化→条件はlidのみ！！
-$stmt = $pdo->prepare("select * from supplier where emailAddress = :emailAddress and lpw = :lpw"); 
+$stmt = $pdo->prepare("select * from customer where emailAddress = :emailAddress and lpw = :lpw"); 
 $stmt->bindValue(':emailAddress', $emailAddress, PDO::PARAM_STR);
 $stmt->bindValue(':lpw', $lpw, PDO::PARAM_STR);
 $status = $stmt->execute();
@@ -45,7 +45,7 @@ if( $val["id"] != "" ){
   $_SESSION["lpw"]      = $lpw;
 
   //Login成功時（リダイレクト）
-  redirect("supplier_offer.php");
+  redirect("customer_top.php");
 }else{
   //Login失敗時(Logoutを経由：リダイレクト)
   redirect("login.php");

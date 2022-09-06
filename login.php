@@ -11,7 +11,7 @@
 <body>
 
 <header>
-  <nav class="navbar navbar-default">LOGIN</nav>
+  <nav class="navbar navbar-default">Supplier Login</nav>
 </header>
 
 <!-- lLOGINogin_act.php は認証処理用のPHPです。 -->
@@ -21,7 +21,22 @@ PW:<input type="password" name="lpw" />
 <input type="submit" value="LOGIN" />
 </form>
 
-<a href="supplier_register.php">Company Registeration</a>
+<a href="supplier_register.php">Supplier Registeration</a>
+
+<div></div>
+
+<header>
+  <nav class="navbar navbar-default">Customer Login</nav>
+</header>
+
+<!-- lLOGINogin_act.php は認証処理用のPHPです。 -->
+<form name="form2" action="login_act2.php" method="post">
+Email Address:<input type="text" name="emailAddress" />
+PW:<input type="password" name="lpw" />
+<input type="submit" value="LOGIN" />
+</form>
+
+<a href="customer_register.php">Customer Registeration</a>
 
 </body>
 </html>

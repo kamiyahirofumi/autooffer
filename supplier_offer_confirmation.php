@@ -2,6 +2,10 @@
 
 <?php
 //1. POSTデータ取得
+$companyName = $_POST['companyName'];
+$plant = $_POST['plant'];
+$port = $_POST['port'];
+
 $grade = $_POST['grade'];
 $finish = $_POST['finish'];
 $minThickness = $_POST['minThickness'];
@@ -14,11 +18,11 @@ $cargoReadiness = $_POST['cargoReadiness'];
 $price = $_POST['price'];
 $vali = $_POST['vali'];
 
-echo $grade;
+// echo $grade;
 // echo $finish;
 // echo $minThickness;
 // echo $maxThickness;
-echo $width;
+// echo $width;
 // echo $maxQty;
 // echo $orderLot;
 // echo $coilWeight;
@@ -41,10 +45,10 @@ echo $width;
 <form method="POST" action="supplier_offer_sent.php">
         <div class>
             <fieldset>
-                <legend>Confirming Offers</legend>
-                    <label>Seller: 要検討！！！！</label><br>
+                <legend>Confirming the Offer</legend>
+                    <label>Seller: <?php echo $companyName; ?></label><br>
                     <label>Buyer: Metal One Corporation</label><br>
-                    <label>Plant: 要検討！！！！</label><br>
+                    <label>Plant: <?php echo $plant; ?> </label><br>
                     <label>Material:Cold Rolled Stainless Steel Sheet In Coil</label><br>
                     <label>Specification:As Per ASTM A240</label><br>
                     <label>Grade: <?php echo $grade; ?> </label><br>
@@ -62,7 +66,7 @@ echo $width;
                     <label>Order Lot：<?php echo $orderLot; ?>mt</label><br>
                     <label>Coil Weight：<?php echo $coilWeight; ?>mt per coil</label><br>
                     <label>Time Of Shipment：<?php echo $cargoReadiness; ?><br>                   
-                    <label>Incoterms: 要検討！！！！</label><br>
+                    <label>Incoterms: FOB <?php echo $port; ?></label><br>
 
                     <!-- <label>いらないPrice：<input type="number" name="price" required>USD/mt for the above selected grade t2.0mm</label><br>                    -->
 
@@ -82,6 +86,10 @@ echo $width;
                         </tr>
                     </table>
                     <!-- hidden -->
+                    <input type="hidden" name="companyName" value=<?php echo $companyName; ?> >
+                    <input type="hidden" name="plant" value=<?php echo $plant; ?> >
+                    <input type="hidden" name="port" value=<?php echo $port; ?> >
+
                     <input type="hidden" name="grade" value=<?php echo $grade ?> >
                     <input type="hidden" name="finish" value=<?php echo $finish ?> >
                     <input type="hidden" name="minThickness" value=<?php echo $minThickness ?> >
@@ -94,7 +102,7 @@ echo $width;
                     <input type="hidden" name="price" value=<?php echo $price ?> >
                     <input type="hidden" name="vali" value=<?php echo $vali ?> >
 
-                    <input type="submit" value="送信">
+                    <input type="submit" value="Submitting the offer">
             </fieldset>
         </div>
     </form>
